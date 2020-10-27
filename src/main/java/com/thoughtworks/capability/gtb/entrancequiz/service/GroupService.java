@@ -18,7 +18,7 @@ public class GroupService {
         List<GroupDto> groupDtoList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             List<StudentDto> studentDtoList = new ArrayList<>();
-            groupDtoList.add(new GroupDto(String.format("%d 组", i), studentDtoList));
+            groupDtoList.add(new GroupDto(String.format("%d 组", i+1), studentDtoList));
         }
 
         for (int i = 0; i < allStudents.size(); i++) {
