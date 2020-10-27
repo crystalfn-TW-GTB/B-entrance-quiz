@@ -22,12 +22,13 @@ public class GroupService {
         }
 
         for (int i = 0; i < allStudents.size(); i++) {
-            List<StudentDto> studentDtoList = groupDtoList.get(i).getStudentDtoList();
             if (i < 6) {
+                List<StudentDto> studentDtoList = groupDtoList.get(i).getStudentDtoList();
                 studentDtoList.add(allStudents.get(i));
                 groupDtoList.get(i).setStudentDtoList(studentDtoList);
             } else {
-                studentDtoList.add(allStudents.get(i % 6));
+                List<StudentDto> studentDtoList = groupDtoList.get(i % 6).getStudentDtoList();
+                studentDtoList.add(allStudents.get(i));
                 groupDtoList.get(i % 6).setStudentDtoList(studentDtoList);
             }
         }

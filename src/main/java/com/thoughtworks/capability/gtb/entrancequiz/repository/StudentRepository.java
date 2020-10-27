@@ -22,4 +22,8 @@ public class StudentRepository {
     public static List<StudentDto> getAllStudents() {
         return studentDtoList;
     }
+
+    public static void addStudent(StudentDto studentDto) {
+        studentDtoList.add(studentDto);
+    }
 }
