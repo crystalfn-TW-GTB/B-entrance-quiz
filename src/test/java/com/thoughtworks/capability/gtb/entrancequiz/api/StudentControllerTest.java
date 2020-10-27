@@ -37,16 +37,12 @@ class StudentControllerTest {
 
     @Test
     void should_add_student() throws Exception {
-        StudentDto studentDto = new StudentDto(StudentRepository.getAllStudents().size() - 1, "crystal");
-        ObjectMapper objectMapper = new ObjectMapper();
-        String studentJson = objectMapper.writeValueAsString(studentDto);
-
-        mockMvc.perform(post("/groups")
-                .content(studentJson)
+        mockMvc.perform(post("/student")
+                .content("crystal")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
 
         assertEquals(16, StudentRepository.getAllStudents().size());
-        assertEquals("crystal", StudentRepository.getAllStudents().get(16).getName());
+        assertEquals("crystal", StudentRepository.getAllStudents().get(15).getName());
     }
 }

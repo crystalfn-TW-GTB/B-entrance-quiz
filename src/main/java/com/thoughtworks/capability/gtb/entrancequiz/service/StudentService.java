@@ -13,7 +13,7 @@ public class StudentService {
     }
 
     public void addStudent(String name) {
-        StudentDto studentDto = new StudentDto(StudentRepository.getAllStudents().size() - 1, name);
+        StudentDto studentDto = new StudentDto(StudentRepository.getAllStudents().size() + 1, name);
         StudentRepository.addStudent(studentDto);
     }
 }
