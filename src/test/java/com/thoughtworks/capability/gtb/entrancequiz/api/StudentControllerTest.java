@@ -1,7 +1,5 @@
 package com.thoughtworks.capability.gtb.entrancequiz.api;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.thoughtworks.capability.gtb.entrancequiz.dto.StudentDto;
 import com.thoughtworks.capability.gtb.entrancequiz.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

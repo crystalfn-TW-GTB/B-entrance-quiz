@@ -13,7 +13,8 @@ import java.util.List;
 public class GroupService {
     public List<GroupDto> getGroups() {
         List<StudentDto> allStudents = StudentRepository.getAllStudents();
-        Collections.shuffle(allStudents);
+        List<StudentDto> shuffleStudents = new ArrayList<>(allStudents);
+        Collections.shuffle(shuffleStudents);
 
         List<GroupDto> groupDtoList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
