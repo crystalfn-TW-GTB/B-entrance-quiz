@@ -22,14 +22,14 @@ public class GroupService {
             groupDtoList.add(new GroupDto(String.format("%d 组", i+1), studentDtoList));
         }
 
-        for (int i = 0; i < allStudents.size(); i++) {
+        for (int i = 0; i < shuffleStudents.size(); i++) {
             if (i < 6) {
                 List<StudentDto> studentDtoList = groupDtoList.get(i).getStudentDtoList();
-                studentDtoList.add(allStudents.get(i));
+                studentDtoList.add(shuffleStudents.get(i));
                 groupDtoList.get(i).setStudentDtoList(studentDtoList);
             } else {
                 List<StudentDto> studentDtoList = groupDtoList.get(i % 6).getStudentDtoList();
-                studentDtoList.add(allStudents.get(i));
+                studentDtoList.add(shuffleStudents.get(i));
                 groupDtoList.get(i % 6).setStudentDtoList(studentDtoList);
             }
         }
