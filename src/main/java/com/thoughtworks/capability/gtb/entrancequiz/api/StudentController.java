@@ -26,6 +26,9 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getAllStudents());
     }
 
+    //TODO GTB-知识点: - StudentController.java:29 根据restful实践，资源名一般是复数
+    //TODO GTB-知识点: - StudentController.java:30 根据restful实践，POST方法一般返回创建的内容或者Id
+    //TODO GTB-知识点: - StudentController.java:31 如果不是有自定义返回的需求，ResponseEntity一般可省略
     @PostMapping("/student")
     public ResponseEntity<List<StudentDto>> addStudent(@RequestBody String productName) {
         studentService.addStudent(productName);

@@ -15,6 +15,7 @@ public class StudentRepository {
     static {
         for (String name : studentNameList) {
             studentDtoList.add(new StudentDto(id, name));
+            //TODO GTB-知识点: - StudentRepository.java:18 诸如i++或者++i，这类操作处理id自增，线程不安全。可以了解下AtomicInteger。
             id++;
         }
     }

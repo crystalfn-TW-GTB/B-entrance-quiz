@@ -17,7 +17,7 @@ public class GroupController {
     public GroupController(GroupService groupService) {
         this.groupService = groupService;
     }
-
+    //TODO GTB-完成度: - GroupController.java:20 缺少查看分组的接口
     @GetMapping("/groups")
     public ResponseEntity<List<GroupDto>> getGroups() {
         return ResponseEntity.ok(groupService.getGroups());
